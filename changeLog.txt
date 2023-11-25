@@ -1,0 +1,149 @@
+v0.0.1 实现了首页预览md [2021.5.10]
+v0.0.2 router 顶部nav正常跳转
+v0.0.3 Home page: Post list
+	done(v0.1.2): 侧边栏 分类
+v0.0.4 Home post/ 显示单篇
+	done(v0.0.9): 侧边栏 目录结构
+v0.0.5 晚上 /about 及 footer
+v0.0.6 add CNAME
+	[bug-fixed]上传到github报错: 405 (Method Not Allowed) 原来不能用post请求
+v0.0.7 换成get请求，添加一个很丑的 favicon.ico
+v0.0.8 /post/ 页添加日期分类信息
+v0.0.9 /post/ 侧边栏目录生成，滚动高亮
+	[done-v0.2.0]: 侧边目录单击会报错，ancher和hash router 无法区分
+v0.1.0 update ReadMe.md 
+	样式极简
+v0.1.1 版本号加到首页title中,fix示例文件名
+v0.1.2 flex局部，响应式布局, / 侧边栏
+	todo: 移动端字体太小
+v0.1.3 fix css
+v0.1.4 完善 readme
+v0.1.5 archive ok
+v0.1.6 /category/xx ok
+v0.1.7 /tags OK
+	category 添加计数
+v0.1.8 /tag/xx OK
+v0.1.9 重构 archive 页面，带年份
+v0.2.0 侧边栏md锚点用js生效，html锚点有点错位
+
+#################
+## coding.net
+https://dawneve.coding.net/p/StackNote/d/StackNote/git
+
+$ git remote add origin2 https://e.coding.net/dawneve/StackNote/StackNote.git
+$ git push -u origin2 master
+验证的是邮箱及密码。
+
+因无法使用 静态页面，弃用。
+git remote remove origin2
+git remote -v
+
+
+## gitee.com
+https://gitee.com/dawnEve/StackNote
+
+git remote add origin2 https://gitee.com/dawnEve/StackNote.git
+git push -u origin2 master
+验证的是用户名及密码。
+
+构建绿色网络环境，Pages 预计进行历时3个月的全面改造，期间服务不可用.(2021.5.12)
+#################
+
+v0.2.1 首页加 viewport，微调字号
+v0.2.2 fix 移动端 tags 重叠问题
+v0.2.3 微调 /about
+-------------------------------> 基本可用了，GitHub 上发布 v0.2.3
+v0.2.4 文章分类信息 categories 集中到 /data/api/db.json; 顶部新增菜单并关联到一个md文件。
+	[2021.5.13] 更新后的 v0.2.4 可用了，把用户数据都集中到/data/文件夹了，方便升级和备份。
+v0.2.5 fix 如果没设置tags，则不显示 tags
+	新增 明朝那些事儿 最后一个章节，字体字号还需要优化。
+v0.2.6 微调 footer
+v0.2.6-2 微调 分类菜单
+v0.2.6-3 微调 md 显示，删一层 div
+v0.2.6-4 fix 标题换行遮挡
+v0.2.7 更新logo第二版
+v0.2.8 微调css
+v0.2.8-2 微调css
+v0.2.8-3 微调css
+v0.2.8-4 新增记单词
+v0.2.9 添加心灵鸡汤模块，首页随机显示一条
+	数据文件在 /data/api/ChickenSoup.json
+v0.3.0 微调
+=========> add MIT License
+v0.3.1 微调首页 index.js
+v0.3.2 修改about页面; add 文献阅读笔记
+v0.3.3 修改右侧目录的宽度，尽可能宽
+v0.3.3-1 add post
+v0.3.3-2 add post
+v0.3.3-3 设置ssh key push
+v0.3.3-4 add post
+v0.3.3-5 add post
+v0.3.3-6 text
+v0.3.3-7 paper
+v0.3.4 底部添加svg github logo
+v0.3.4-1 paper
+v0.3.4-2 paper
+v0.3.4-3 listening HP3_9
+v0.3.4-4 paper
+v0.3.4-5 paper
+v0.3.5 底部添加警示
+v0.3.5-1 paper, HP3_11
+v0.3.5-2 abstract: single cell
+v0.3.5-3 abstract: APA
+v0.3.5-4 dataset: Smart-seq2 [2021/10/2]
+v0.3.5-5 paper: snakemake [2021/10/3]
+v0.3.5-6 paper: Smart-seq2(1-30) [2021/10/3]
+v0.3.5-7 paper: Smart-seq2(31-70) [2021/10/5]
+v0.3.5-8 paper: cor(APA, RNA) [2021/10/19]
+v0.3.5-9 paper:snakemake 36/63 [2021/10/31]
+v0.3.6-0 paper:snakemake 50/63 [2021/11/1]
+v0.3.6-1 paper:snakemake 63/63 [2021/11/3]
+v0.3.6-2 听力; 文献;[2021/11/12]
+v0.3.6-3 change css(smaller fonts); paper: mutate polyA signal, change cell cycle [2022/1/30]
+	中性粒细胞; 张泽民lab code; 
+	bioinfo blog;
+	Sierra-APA;
+	scAPA-db;
+v0.3.6-4 important genes in cell cycle [2022/2/25]
+v0.3.6-5 add APA paper scan [2022.3.16]
+v0.3.6-6 go to school [2022.4.6]
+
+v0.3.6-7@sust Neu_B_Catenin [2022.5.18]
+v0.3.6-8@sust APA 摘要 [2022.5.18]
+v0.3.6-9@sust APA 摘要 [2022.6.20]
+v0.3.7-0@sust 添加闹钟 [2022.7.2]
+v0.3.7-1@sust 完善闹钟 [2022.7.4]
+v0.3.7-2@sust 在 template 中添加 style [2022.7.6]
+v0.3.7-3@sust add real recipe [2022.8.21]
+v0.3.7-4@sust add APA Funds [2022.11.24]
+v0.3.7-5@sust read APA Abstract [2022.11.26]
+v0.3.7-6@sust read APA Abstract: CPEB4, m6A [2022.12.3]
+v0.3.7-7@sust read APA Abstract: 雄性激素与APA, 糖皮质激素与APA [2022.12.3]
+v0.3.7-8@sust read APA Abstract: 4种RNA修饰与APA [2022.12.4]
+v0.3.7-9@sust read APA Abstract: 5'uncapped 转录本 [2022.12.8]
+v0.3.8-0@sust update css; add 哈利波特评论 [2022.12.20]
+v0.3.8-1@sust read APA Abs [2022.12.28]
+v0.3.8-2@sust read APA Abs [2022.12.30]
+v0.3.8-3@sust DNA-seq: 嵌合度分析 [2023.4.10]
+v0.3.8-4@hzNB 更新，添加 gitee 源 [2023.8.6]
+#
+#--> commit
+#----------> push to github dawneve/StackNote
+
+
+核心目录 data/api/db.json
+Web url: note.biomooc.com
+local url: blog3.dawneve.cc
+
+
+
+
+
+
+
+#TO-Read
+https://pubmed.ncbi.nlm.nih.gov/34998928/ RNA polyadenylation patterns in the human transcriptome
+
+//todo 
+Keyword on NCBI:
+	(cell cycle) AND (APA)

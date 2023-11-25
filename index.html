@@ -1,0 +1,289 @@
+<html>
+
+<head>
+	<meta http-equiv=Content-Type content="text/html;charset=utf-8">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<meta name="description" content="学习笔记,文献笔记,英语笔记,编程笔记," />
+
+	<script src="/static/js/lib/vue.global-3.0.11.js"></script>
+	<script src="/static/js/lib/vue-router.global-4.0.6.js"></script>
+	<script src="/static/js/lib/axios.min-0.18.0.js"></script>
+
+	<script src="/static/js/lib/marked-2.0.3.js"></script>
+
+
+	<script src="/static/js/my-main.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="/static/css/index.css">
+	<title>
+		文献阅读笔记 
+		| powered by StackNote 
+		v0.3
+	</title>
+</head>
+
+
+
+<body>
+<div id="app1">
+	<header>
+		<ul id=topNav>
+			<b class=logo><a href="#/"><img src="/favicon.ico"></a></b>
+			<template v-for="menu in topMenu">
+				<li :class="{current: menu.path == currentRoute}">
+					<router-link :to="menu.path">{{menu.caption}}</router-link>
+				</li>
+			</template>
+
+			<!--
+			<li class='out'><a target="_blank" href="https://github.com/DawnEve/StackNote">GitHub</a></li>
+			-->
+		</ul>
+	</header>
+
+
+
+	<main id="container">
+		<!--
+		<nav>1nav...</nav>
+		<article>2article...</article>
+		<aside>3aside...</aside>
+		-->
+		
+		<router-view></router-view>
+
+	</main>
+
+
+
+
+
+
+    <footer class="footer">
+    	<p><i>种一棵树最好的时间是十年前，其次是现在。</i></p>
+    	<p>"The best time to plant a tree was 20 years ago. The second best time is now."</p>
+        
+        <p>找到自己的定位，明确自己的科学问题，协助发现有意义的生物学规律，发paper，申请funding，冲刺顶刊，不要玩物丧志。</p>
+
+    	<p>Copyright &copy;2021 - present 
+    		<a target="_blank" href="https://www.biomooc.com">BioMooc.com</a>. 
+    		All Rights Reserved.
+    	</p>
+    	<p>
+    		<a target="_blank" href="https://guides.github.com/features/mastering-markdown/">Markdown guide</a>. | 
+    		<a href="/#/about">Contact me</a>:
+
+
+            <a target="_blank" href="https://github.com/DawnEve/StackNote">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37.0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44.0 0020 4.77 5.07 5.07.0 0019.91 1S18.73.65 16 2.48a13.38 13.38.0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07.0 005 4.77 5.44 5.44.0 003.5 8.55c0 5.42 3.3 6.61 6.44 7A3.37 3.37.0 009 18.13V22"></path></svg>      
+            </a>
+            |
+            <a href="#/about" style="display:none;">
+                <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1.0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1.0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </a>
+
+
+
+    		
+    	</p>
+
+    	<p>Today is {{timestamp.toString()}} | Set up for {{elapse}} days</p>
+    	
+    	<p>
+    		(毛选:
+    			<a target="_blank" href="https://github.com/weiyinfu/MaoZeDongAnthology">Github</a> |
+    			<a target="_blank" href="https://weiyinfu.cn/MaoZeDongAnthology/">网页</a>
+    		) 
+    		|
+    		<a target="_blank" href="http://www.gov.cn/">Gov.cn</a> | 
+            <a target="_blank" href="http://www.chinatax.gov.cn/chinatax/n1670141/index.html">税务局</a> | 
+    		<a target="_blank" href="http://www.moe.gov.cn/">教育部</a> | 
+    		( 
+    			<a target="_blank" href="http://www.nsfc.gov.cn/">基金委</a> |
+    			<a target="_blank" href="http://www.nsfc.gov.cn/nsfc/cen/00/kxb/sm/01/views/">生命科学部</a>
+    		)
+            |
+            <a target="_blank" href="http://www.ibp.cas.cn/">中科院生物物理所</a>
+
+
+    	</p>
+
+
+    </footer>
+
+</div>
+
+
+
+
+
+<div id="gotoTop" title="Goto top">↑</div>
+
+
+
+
+<script type="module">
+var log=console.log;
+
+
+
+// 共享数据部分
+var app=Vue.createApp({
+    data(){
+        return {
+        	timestamp: new Date(), //vm.timestamp
+
+            // 顶部目录
+            topMenu:[
+            	{path:'/home', caption:'Home'},
+            	{path:'/archive', caption:'Archive'},
+            	{path:'/tags', caption:'Tags'},
+            	{path:'/about', caption:'About'},
+
+                {path:'/ReadMe', caption:'ReadMe'},
+
+            	{path:'/recipe', caption:'菜谱'},
+            ],
+
+            // 博客分类
+            categories: {value:''},
+
+            // meta 数据
+            posts: {value:''},
+
+            // 本地计算
+            catdict:{}, // cate 计数字典
+            tagdict:{}, // tag 计数字典
+            years:[], //博客的年份
+        }
+    },
+
+    computed:{
+    	currentRoute(){
+    		return this.$route.path;
+    	},
+    	elapse(){ // 自博客创建以来的天数，保留3位小数
+    		return ((this.timestamp.getTime() - 1620665409601)/1000/3600/24).toFixed(3);
+    	}
+    },
+
+
+	methods:{
+    	getPostList(){
+    		var self=this;
+			axios.get('/data/api/db.json', {} ).then(function(res){
+				
+				var data=eval("("+res.data+")");
+
+				var posts=data.posts;
+				var categories=data.categories;
+
+				for(var i=0; i<posts.length;i++){
+					var post=posts[i];
+					// 计算属性
+					post.url='/post/'+post.year+"/"+post.title;
+					post.date=post.title.substring(0,2) +'-' + post.title.substring(2,4)
+					post.time=post.year +'-'+ post.date;
+
+					// 分类 的文章数
+					var cat=post.category;
+					if(cat in self.catdict){
+						self.catdict[cat] +=1;
+					}else{
+						self.catdict[cat]=1;
+					}
+
+
+					// 标签云
+					for(var j=0; j<post.tags.length; j++){
+						var tag=post.tags[j];
+						if(tag in self.tagdict){
+							self.tagdict[tag] +=1;
+						}else{
+							self.tagdict[tag]=1;
+						}
+					}
+
+					//年份
+					if( ! self.years.includes( post.year )){
+						self.years.push(post.year);
+					}
+
+
+				}
+				self.posts.value=posts;
+				self.categories.value=categories;
+			});
+    	}
+    },
+
+    mounted(){
+    	this.getPostList()
+    },
+
+
+
+
+    //给子组件提供数据 暂时无用
+    provide(){
+    	return{
+    		"categories": this.categories,
+    		"posts": this.posts,
+    		'catdict': this.catdict,
+    		'tagdict': this.tagdict,
+    		'years': this.years,
+    	};    	
+    },
+    
+})
+
+// 载入所有的页面视图 组件
+import Index from "/src/views/Index.js" //自定义首页
+
+import Home from "/src/views/Home.js" // list 页
+import Archive from "/src/views/Archive.js"
+import Category from "/src/views/Category.js"
+import Tags from "/src/views/Tags.js"
+
+//const About = {template: '<div>About</div>',}
+import About from "/src/views/About.js"
+import MyPost from "/src/views/MyPost.js" // 单个 md
+
+import ReadMe from "/src/views/ReadMe.js"
+import Recipe from "/src/views/Recipe.js"
+
+//路由表
+const routes = [
+  { path: '/', component: Index },
+
+  { path: '/home', component: Home },
+  { path: '/post/:postPath+', component: MyPost },
+
+
+  { path: '/archive', component: Archive },
+  { path: '/tags', component: Tags },
+  { path: '/about', component: About },
+  { path: '/tag/:tag', component: Tags },
+  { path: '/category/:cate', component: Category },
+
+  { path: '/ReadMe', component: ReadMe },
+  { path: '/recipe', component: Recipe },
+]
+
+// 路由
+const router = VueRouter.createRouter({
+	//mode: 'history',
+  history: VueRouter.createWebHashHistory(), 
+  routes,
+})
+
+app.use(router)
+var vm=app.mount("#app1");
+window.vm=vm
+
+</script>
+</body>
+</html>
